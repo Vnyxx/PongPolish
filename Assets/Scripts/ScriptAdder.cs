@@ -17,5 +17,6 @@ public abstract class ScriptAdder<T> : MonoBehaviour where T : MonoBehaviour
         //find MonoBehaviour and add the  to it
         monoBehaviour = FindObjectOfType<T>(); //find the object of type T
         monoBehaviour.gameObject.AddComponent(GetType()); //GetType() gets the type of the instance
+        Destroy(this);
     }
 }
