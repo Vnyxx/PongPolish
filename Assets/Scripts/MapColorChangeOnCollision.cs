@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MapColorChangeOnCollision : ScriptAdder<BallMovement>
 {
@@ -18,37 +19,8 @@ public class MapColorChangeOnCollision : ScriptAdder<BallMovement>
     {
         foreach (SpriteRenderer spriteRenderer in spriteRenderersList)
         {
-            int r = Random.Range(0, 9);
-            switch (r)
-            {
-                case 0:
-                    spriteRenderer.color = Color.red;
-                    break;
-                case 1:
-                    spriteRenderer.color = Color.green;
-                    break;
-                case 2:
-                    spriteRenderer.color = Color.blue;
-                    break;
-                case 3:
-                    spriteRenderer.color = Color.yellow;
-                    break;
-                case 4:
-                    spriteRenderer.color = Color.cyan;
-                    break;
-                case 5:
-                    spriteRenderer.color = Color.magenta;
-                    break;
-                case 6:
-                    spriteRenderer.color = Color.blue;
-                    break;
-                case 7:
-                    spriteRenderer.color = Color.white;
-                    break;
-                case 8:
-                    spriteRenderer.color = Color.gray;
-                    break;
-            }
+            Color b = new Color(Random.Range(0.1f, 1f), Random.Range(0.1f, 1f), Random.Range(0.1f, 1f));
+            spriteRenderer.color = b;            print(spriteRenderer.color);
         }
     }
 }
